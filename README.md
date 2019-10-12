@@ -38,7 +38,7 @@ python testers.py
 ```
 We can see that the total number of parameters is 3996704 (4.0M). Among them, there are 3107170 (3.11M) zero parameters and 889534 (0.89M) non-zero parameters. The number of bitmask is 122051 (0.1221M). So the total parameters for storage is 0.5668M (0.89M * 16 / 32 + 0.1221M). 
 
-Parameter number: 0.5668M
+- Parameter number: 0.5668M
 
 # Count operations
 
@@ -62,7 +62,7 @@ The original version is for the efficientnet on tensorflow. We made necessary mo
 
 So in the case of no sparsity, the total number of operations is 231.25M (77.84M+153.41M). If we consider the sparsity and set it to non-zero value, the number of operations will decrease. But since the sparsity for each layer is not the same, it is not easy to use one number to represent the sparsity of all layers. We suggest that setting the sparsity parameter to 0.5 should be an appropriate choice, considering the overall sparsity for the whole model is about 77% (1 - 0.89M/4M). By setting the sparsity parameter to 0.5, there are 39.49M multiplications and 76.7M additions according to the outputs of the check_model_operations.py file. The total operation number is 116.19M. The real operation number should be smaller than this, because most of the layers have a sparsity larger than 0.5 and the overall sparsity of the whole model is about 0.77. But we think we can use this operation number in scoring.
 
-operation number: 116.19M
+- Operation number: 116.19M
 
 # Score 
 
