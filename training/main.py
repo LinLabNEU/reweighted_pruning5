@@ -341,8 +341,8 @@ def masked_retrain(criterion, optimizer, scheduler):
         best_prec1.append(prec1)
         print("current best acc is: {:.4f}".format(max(best_prec1)))
 
-    test_column_sparsity(model)
-    test_filter_sparsity(model)
+    #test_column_sparsity(model)
+    #test_filter_sparsity(model)
 
     print("Best Acc: {:.4f}%".format(max(best_prec1)))
     np.save(strftime("./plotable/%m-%d-%Y-%H:%M_plotable_{}.npy".format(args.sparsity_type)), epoch_loss_dict)
